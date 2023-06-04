@@ -103,11 +103,11 @@
 							输入的文件名均包含相对路径。<br>
 							图结构文件为文本文件，第一行两个整数分别为图顶点数量（<i>v_num</i>）和边数量，之后每一行为一条边，格式为“源顶点id 目的顶点id”，顶点id从0开始
 							图结构文件中包含自环（即有边“i i”），包含反向边（即同时有边“i j”和边“j i”）。<br>
-							输入顶点特征矩阵文件为二进制文件，包含<img src="formula14.png" height="22">个float32，大小为<img src="formula15.png"
+							输入顶点特征矩阵文件为二进制文件，包含<img src="picture/formula14.png" height="22">个float32，大小为<img src="picture/formula15.png"
 								height="22">字节，<br>
-							第一层权重矩阵文件为二进制文件，包含<img src="formula16.png" height="22">个float32，大小为<img src="formula17.png"
+							第一层权重矩阵文件为二进制文件，包含<img src="picture/formula16.png" height="22">个float32，大小为<img src="picture/formula17.png"
 								height="22">字节，<br>
-							第二层权重矩阵文件为二进制文件，包含<img src="formula18.png" height="22">个float32，大小为<img src="formula19.png"
+							第二层权重矩阵文件为二进制文件，包含<img src="picture/formula18.png" height="22">个float32，大小为<img src="picture/formula19.png"
 								height="22">字节。<br>
 							读取文件、分配内存、和数组初始化置0的时间均不统计在执行时间内，但预处理时间（例如顶点排序）等须计入执行时间。<br>
 							具体参考样例中<b>your_team_name/gcn.cpp。</b>
