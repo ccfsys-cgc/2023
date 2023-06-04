@@ -71,21 +71,21 @@
 							Network，GCN）作为众多图神经网络的基石之一，也是目前最流行的图神经网络模型之一。GCN凭借对图数据的处理能力以及简单的网络结构，被迅速地应用于交通预测、蛋白质性质预测、推荐系统等领域。加速GCN的推理过程对推进各领域的研究以及人们的现实生活都有重要意义。
 							<br>
 							GCN通常由多个图卷积层（隐藏层）构成，接受图结构<i>G=&ltV, E&gt</i>及图的顶点特征矩阵
-							<img src="formula1.png" height="22">
+							<img src="picture/formula1.png" height="22">
 							作为输入，最终生成的新顶点特征矩阵作为输出。单个图卷积层的传播公式如下：
 						</p>
 						<p style="text-align:center">
-							<img src="formula2.png" height="50">
+							<img src="picture/formula2.png" height="50">
 						</p>
 						<p style="line-height:30px">
-							其中<i>l</i>表示层号，<i>α</i>为激活函数， <img src="formula3.png" height="22">为归一化后的图邻接矩阵，<img src="formula4.png"
-								height="22">为输入顶点特征矩阵，<img src="formula5.png" height="22">为权重矩阵，<img src="formula6.png"
-								height="22">为输出顶点特征矩阵。归一化邻接矩阵A ̂的计算公式为：<img src="formula7.png" height="22">。
+							其中<i>l</i>表示层号，<i>α</i>为激活函数， <img src="picture/formula3.png" height="22">为归一化后的图邻接矩阵，<img src="picture/formula4.png"
+								height="22">为输入顶点特征矩阵，<img src="picture/formula5.png" height="22">为权重矩阵，<img src="picture/formula6.png"
+								height="22">为输出顶点特征矩阵。归一化邻接矩阵A ̂的计算公式为：<img src="picture/formula7.png" height="22">。
 							<br>
 							其中A为图邻接矩阵（默认包含自环），D为A对应的顶点度矩阵（对角矩阵）。
 						</p>
 						<p style="text-align:center">
-							<img src="GCN.png"> <br>
+							<img src="picture/GCN.png"> <br>
 							多层图神经网络
 						</p>
 						<p style="line-height:30px">
@@ -94,15 +94,15 @@
 							ReLU函数定义为：
 						</p>
 						<p style="text-align:center">
-							<img src="formula8.png" height="25">
+							<img src="picture/formula8.png" height="25">
 						</p>
 						<p style="line-height:30px">
 							LogSoftmax函数定义为：
 						</p>
 						<p style="text-align:center">
-							<img src="formula9.png" height="65">
+							<img src="picture/formula9.png" height="65">
 							<br>
-							<img src="formula10.png" height="50">
+							<img src="picture/formula10.png" height="50">
 							<br>
 						</p>
 						<br>
@@ -117,8 +117,8 @@
 							数据规模
 						</h3>
 						<p style="line-height:30px">
-							GCN模型： <img src="formula11.png" height="22">，<img src="formula12.png" height="22"> ， <img
-								src="formula13.png" height="22"><br>
+							GCN模型： <img src="picture/formula11.png" height="22">，<img src="picture/formula12.png" height="22"> ， <img
+								src="picture/formula13.png" height="22"><br>
 							图规模：<br>
 						</p>
 						<table class="table table-striped table-bordered table-hover">
