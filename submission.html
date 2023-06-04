@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Free Bootstrap Admin Template : Dream</title>
+	<!-- Bootstrap Styles-->
+	<link href="assets/css/bootstrap.css" rel="stylesheet" />
+	<!-- FontAwesome Styles-->
+	<link href="assets/css/font-awesome.css" rel="stylesheet" />
+	<!-- Custom Styles-->
+	<link href="assets/css/custom-styles.css" rel="stylesheet" />
+	<!-- Google Fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default top-navbar" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">中国图计算大赛 China Graph Challenge</a>
+			</div>
+		</nav>
+		<!--/. NAV TOP  -->
+		<nav class="navbar-default navbar-side" role="navigation">
+			<div class="sidebar-collapse">
+				<ul class="nav" id="main-menu">
+					<li>
+						<a href="index.html"><i class="fa fa-desktop"></i>比赛题目</a>
+					</li>
+					<li>
+						<a href="schedule.html"><i class="fa fa-table"></i>赛程安排</a>
+					</li>
+					<li>
+						<a href="registration.html"><i class="fa fa-qrcode"></i>参赛队伍报名</a>
+					</li>
+					<li>
+						<a href="submission.html" class="active-menu"><i class="fa fa-edit"></i>参赛作品提交</a>
+				</ul>
+
+			</div>
+
+		</nav>
+		<!-- /. NAV SIDE  -->
+		<div id="page-wrapper">
+			<div id="page-inner">
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="page-header">
+							参赛作品提交
+						</h1>
+						<h3>
+							提交材料
+						</h3>
+						<p style="line-height:30px">
+							提交.tar.gz格式的压缩包，并以英文队伍名进行命名，例如your_team_name.tar.gz。
+						</p>
+						<br>
+						<h3>
+							压缩包文件结构
+						</h3>
+						<br>
+						<div class="language-plaintext highlighter-rouge">
+							<div class="highlight">
+								<pre class="highlight"><code>your_team_name.tar.gz
+├── your_team_name
+│   	├── source_code.cpp
+│   	├── makefile
+│   	└── README
+├── your_team_name_report
+│   	└── report.pdf
+└── your_team_name.exe</code></pre>
+							</div>
+						</div>
+						<br>
+						<h3>
+							包含文件
+						</h3>
+						<p style="line-height:30px">
+							<b>1. 程序源代码</b> <br>
+							包含完整源代码source_code.cpp，执行makefile文件应可编译出可执行文件（以英文队伍名.exe进行命名，例如your_team_name.exe），并将生成的可执行文件放在上级目录中，即目标为../your_team_name.exe
+							如果使用了第三方库，请在/your_team_name /README中详细说明安装和使用方法, 同时注意测试环境与本地保持一直，若无法复现将视为计算结果错误<br>
+							<b>2. 技术报告文档</b> <br>
+							报告文档命名为report.pdf，内容包括但不限于基本算法介绍、设计思路和方法、算法优化、详细算法设计与实现、实验结果与分析、程序代码模块说明、详细程序代码编译说明、详细代码运行使用说明等。<br>
+							注意提交压缩包中无需包含数据集等文件，只需以上文件。
+						</p>
+						<br>
+						<h3>
+							测试方式
+						</h3>
+						<p style="line-height:30px">
+							可执行程序需接收7个参数，分别为：输入顶点特征长度、第一层顶点特征长度、第二层顶点特征长度、图结构文件名、输入顶点特征矩阵文件名、第一层权重矩阵文件名、第二层权重矩阵文件名。<br>
+							例如：<b>./your_team_name.exe 64 16 8 graph/1024_example_graph.txt embedding/1024.bin weight/W_64_16.bin
+								weight/W_16_8.bin。</b><br>
+							可执行程序需打印输出两个值，分别为最大的顶点特征矩阵行和执行时间,具体参考样例（在报名完成后将会收到）中<b>your_team_name/gcn.cpp</b>
+							输入的文件名均包含相对路径。<br>
+							图结构文件为文本文件，第一行两个整数分别为图顶点数量（<i>v_num</i>）和边数量，之后每一行为一条边，格式为“源顶点id 目的顶点id”，顶点id从0开始
+							图结构文件中包含自环（即有边“i i”），包含反向边（即同时有边“i j”和边“j i”）。<br>
+							输入顶点特征矩阵文件为二进制文件，包含<img src="formula14.png" height="22">个float32，大小为<img src="formula15.png"
+								height="22">字节，<br>
+							第一层权重矩阵文件为二进制文件，包含<img src="formula16.png" height="22">个float32，大小为<img src="formula17.png"
+								height="22">字节，<br>
+							第二层权重矩阵文件为二进制文件，包含<img src="formula18.png" height="22">个float32，大小为<img src="formula19.png"
+								height="22">字节。<br>
+							读取文件、分配内存、和数组初始化置0的时间均不统计在执行时间内，但预处理时间（例如顶点排序）等须计入执行时间。<br>
+							具体参考样例中<b>your_team_name/gcn.cpp。</b>
+						</p>
+						<br>
+						<h3>
+							测试环境
+						</h3>
+						<p style="line-height:30px">
+							CPU：Intel Xeon Gold 5117 @2.00GHz（物理核心数28，逻辑核心数56）<br>
+							内存：512GB<br>
+							操作系统：Ubuntu 21.10<br>
+							g++或gcc编译器：9.4.0<br>
+						</p>
+						<br>
+						<h3>
+							评分方式
+						</h3>
+						<p>
+							对于结果正确的队伍，将结合其性能（80分）和报告文档（20分）计算总分，<br>
+							结果错误的队伍为0分。
+						</p>
+					</div>
+				</div>
+				<!-- /. PAGE INNER  -->
+			</div>
+			<!-- /. PAGE WRAPPER  -->
+		</div>
+		<!-- /. WRAPPER  -->
+		<!-- JS Scripts-->
+		<!-- jQuery Js -->
+		<script src="assets/js/jquery-1.10.2.js"></script>
+		<!-- Bootstrap Js -->
+		<script src="assets/js/bootstrap.min.js"></script>
+		<!-- Metis Menu Js -->
+		<script src="assets/js/jquery.metisMenu.js"></script>
+		<!-- Custom Js -->
+		<script src="assets/js/custom-scripts.js"></script>
+
+
+</body>
+
+</html>
