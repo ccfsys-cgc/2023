@@ -60,17 +60,17 @@
 							提交材料
 						</h3>
 						<p style="line-height:30px">
-							提交.tar.gz格式的压缩包，并以英文队伍名进行命名，例如your_team_name.tar.gz。
+							在截止日期前于自己的github账户中上传参赛作品，项目以cgc+自己队伍的英文名进行命名，例如cgc-your_team_name。
 						</p>
 						<br>
 						<h3>
-							压缩包文件结构
+							github项目中文件结构
 						</h3>
 						<br>
 						<div class="language-plaintext highlighter-rouge">
 							<div class="highlight">
-								<pre class="highlight"><code>your_team_name.tar.gz
-├── your_team_name
+								<pre class="highlight"><code>cgc-your_team_name
+├── your_team_name_src
 │   	├── source_code.cpp
 │   	├── makefile
 │   	└── README
@@ -86,7 +86,7 @@
 						<p style="line-height:30px">
 							<b>1. 程序源代码</b> <br>
 							包含完整源代码source_code.cpp，执行makefile文件应可编译出可执行文件（以英文队伍名.exe进行命名，例如your_team_name.exe），并将生成的可执行文件放在上级目录中，即目标为../your_team_name.exe
-							如果使用了第三方库，请在/your_team_name /README中详细说明安装和使用方法, 同时注意测试环境与本地保持一直，若无法复现将视为计算结果错误<br>
+							如果使用了第三方库，请在/your_team_name /README中详细说明安装和使用方法, 同时注意测试环境与本地保持一致，若无法复现将视为计算结果错误。<br>
 							<b>2. 技术报告文档</b> <br>
 							报告文档命名为report.pdf，内容包括但不限于基本算法介绍、设计思路和方法、算法优化、详细算法设计与实现、实验结果与分析、程序代码模块说明、详细程序代码编译说明、详细代码运行使用说明等。<br>
 							注意提交压缩包中无需包含数据集等文件，只需以上文件。
