@@ -91,7 +91,7 @@
 						</h3>
 						<p style="line-height:30px">
 							1. 程序源代码 <br>
-							包含完整源代码<b>source_code.cpp</b>，执行makefile文件应可编译出可执行文件（以英文队伍名.exe进行命名，例如<b>your_team_name.exe</b>），并将生成的可执行文件放在上级目录中，即目标为<b>../your_team_name.exe</b>。
+							包含完整源代码<b>source_code.cpp</b>，执行makefile文件应可编译出可执行文件（以英文队伍名.exe进行命名，例如：<b>your_team_name.exe</b>），并将生成的可执行文件放在上级目录中，即目标为<b>../your_team_name.exe</b>。
 							如果使用了第三方库，请在<b>/your_team_name/README</b>中详细说明安装和使用方法, 同时注意测试环境与本地保持一致，若无法复现将视为计算结果错误。
 						</p>
 						<p style="line-height:30px">
@@ -123,11 +123,14 @@
 							第一层权重矩阵文件为二进制文件，包含<img src="picture/formula16.png" height="22">个float32，大小为<img
 								src="picture/formula17.png" height="22">字节，
 							第二层权重矩阵文件为二进制文件，包含<img src="picture/formula18.png" height="22">个float32，大小为<img
-								src="picture/formula19.png" height="22">字节。
+								src="picture/formula19.png" height="22">字节。<br>
 							读取文件、分配内存、和数组初始化置0的时间均不统计在执行时间内，但预处理时间（例如顶点排序）等须计入执行时间。
 						</p>
 						<p style="line-height:30px">
 							具体参考样例中<b>your_team_name/gcn.cpp。</b>
+						</p>
+						<p style="line-height:30px">
+							注：读取文件必须使用样例中<b>your_team_name/gcn.cpp</b>文件内提供的<b>readGraph()</b>函数，不计入执行时间内，若需转换为邻接表或是CSR等格式须在<b>somePreprocessing()</b>函数内实现，并计入执行时间。
 						</p>
 						<br>
 						<h3>
